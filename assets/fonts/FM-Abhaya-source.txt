@@ -1,0 +1,5 @@
+FM Abhaya font supplied by the user in FM-Fonts.zip.
+Source entry: FM-Fonts/FM-Abhaya.TTF
+SHA-256: 84ef1150b4bd2063a6f3f804be2e45417914d37a4ee02b0b8c73863478c72afb
+Embedded copyright: Copyright - Pushpananda Ekanayaka 1998
+The neighboring OFL.txt applies to Noto Sans Sinhala, not this file.

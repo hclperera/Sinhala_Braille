@@ -1,0 +1,10 @@
+{
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssinhala/NotoSansSinhala%5Bwdth,wght%5D.ttf",
+  "upstream_version": "Version 2.006",
+  "source_sha256": "9bd93e407a278075be403324063bc94a7e306c44de4df81214e932330c22eecf",
+  "bundled_sha256": "c40fe804e9db9add6f016666e0a70e7f3aa7405ed89cb5ce2fb25ec5f2f982f8",
+  "instance": {
+    "wght": 400,
+    "wdth": 100
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "input_size": 640,
+  "runtime": "OpenCV DNN CPU",
+  "export": {
+    "opset": 12,
+    "dynamic": false,
+    "nms": false,
+    "simplify": false
+  },
+  "versions": {
+    "ultralytics": "8.4.62",
+    "opencv": "4.13.0",
+    "torch": "2.12.0+cpu",
+    "onnx": "1.22.0"
+  },
+  "models": {
+    "page": {
+      "asset": "assets/models/page.onnx",
+      "classes": {
+        "0": "page"
+      },
+      "source_sha256": "42c3f36d16dfdcd1bb766a81a3ddad296d8afb9e3e548fd9d4febf3306d332ad",
+      "sha256": "d6577d937cd4d733d985ec96c75352444665b7ee8e41f7cf3790e07689c67f9c",
+      "bytes": 12238426,
+      "output_shape": [
+        1,
+        5,
+        8400
+      ],
+      "synthetic_probe": {
+        "max_absolute_error": 0.00054931640625,
+        "mean_absolute_error": 1.656055792409461e-05,
+        "desktop_cpu_seconds": 0.26055559993255883,
+        "recognition_accuracy_validated": false
+      }
+    },
+    "dots": {
+      "asset": "assets/models/dots.onnx",
+      "classes": {
+        "0": "InfoX",
+        "1": "back",
+        "2": "front"
+      },
+      "source_sha256": "db5f3754a949f6025cec61d3ca1b25e251dcbe56ea4b4ab00796bd4a667d8e5f",
+      "sha256": "af867bee6953913b6cd802d6aed48d4a7db6efc8491466d05c464da2f4c186bc",
+      "bytes": 44722371,
+      "output_shape": [
+        1,
+        7,
+        8400
+      ],
+      "synthetic_probe": {
+        "max_absolute_error": 0.0006103515625,
+        "mean_absolute_error": 8.570855243306141e-06,
+        "desktop_cpu_seconds": 0.6317355999490246,
+        "recognition_accuracy_validated": false
+      }
+    }
+  },
+  "front_class_id": 2
+}
