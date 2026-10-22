@@ -95,6 +95,7 @@ If OpenCV's CMake download fails with an HTTP/2 stream error, download its
 matching source archive over HTTP/1.1 and configure the existing Android cache:
 
 ```powershell
+New-Item -ItemType Directory -Force .tooling | Out-Null
 curl.exe -4 --http1.1 --fail --location https://codeload.github.com/opencv/opencv/tar.gz/refs/tags/4.13.0 --output .tooling/opencv-4.13.0.tar.gz
 python tools/use_local_opencv.py .tooling/opencv-4.13.0.tar.gz
 flutter build apk --debug --target-platform android-arm64

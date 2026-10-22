@@ -1,7 +1,7 @@
 # Miscellaneous
 *.class
 *.log
-*.pyc
+*.py[cod]
 *.swp
 .DS_Store
 .atom/
@@ -49,3 +49,39 @@ app.*.map.json
 Ultralytics/
 __pycache__/
 test_images/
+
+# Installable builds (share these through release assets)
+*.apk
+*.aab
+*.ipa
+
+# Local environment settings and signing secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+key.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+
+# Python tooling used for model conversion and reference checks
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Native build intermediates
+.gradle/
+.cxx/
+
+# Raw training checkpoints; bundled assets/models/*.onnx stay versioned
+*.pt
+*.pth
+*.ckpt
+
+# Private scan exports copied from a device
+/saved_scans/
+/captures/

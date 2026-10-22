@@ -1,7 +1,8 @@
 """Export local YOLOv8 checkpoints without modifying the originals.
 
 The generated probe checks runtime compatibility only, not Braille accuracy.
-Run from the project root: python tools/prepare_models.py
+Run from the project root:
+  python tools/prepare_models.py --page path/to/page.pt --dots path/to/dots.pt
 """
 import argparse
 import hashlib
@@ -24,8 +25,10 @@ def digest(path):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--page', default=r'D:\InfoX\Models\Page\v3\page_scannerv3_colab_runtime_output\yolov8_page_detector\weights\best.pt')
-    parser.add_argument('--dots', default=r'D:\InfoX\Models\v14\best.pt')
+    parser.add_argument('--page', required=True, type=Path,
+                        help='Path to the YOLO page detection checkpoint')
+    parser.add_argument('--dots', required=True, type=Path,
+                        help='Path to the YOLO Braille dot detection checkpoint')
     args = parser.parse_args()
     import cv2
     import numpy as np
@@ -46,7 +49,8 @@ def main():
     for name, filename in [('page', args.page), ('dots', args.dots)]:
         source = Path(filename)
         checkpoint = WORK / f'{name}.pt'
-        shutil.copyfile(source, checkpoint)
+        if source.resolve() != checkpoint.resolve():
+            shutil.copyfile(source, checkpoint)
         model = YOLO(str(checkpoint))
         classes = {str(k): v for k, v in model.names.items()}
         exported = Path(model.export(format='onnx', imgsz=640, opset=12,

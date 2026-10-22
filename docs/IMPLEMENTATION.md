@@ -5,8 +5,8 @@
 Android and iOS Flutter application. Manual capture with continuous torch, gallery
 selection, page crop, grayscale/bilateral/CLAHE preprocessing, SAHI-style YOLOv8s
 dot inference, full backend grid reconstruction, Sinhala text and manual TTS
-play/stop. No runtime network, accounts, history, automatic capture or camera
-guidance.
+play/stop. Includes local saved scans with source photos, text correction and
+deletion. No runtime network, accounts, automatic capture or camera guidance.
 
 The original Python services and selected UI files are frozen under
 `tools/reference/`; exact upstream commits are in `revisions.json`. They are
@@ -75,7 +75,7 @@ remain usable. Focus accuracy and response time require device testing.
 
 ## Reproducible checks
 
-1. `python tools/prepare_models.py`: export copies of the supplied models,
+1. `python tools/prepare_models.py --page "path/to/page/best.pt" --dots "path/to/dots/best.pt"`: export copies of the supplied models,
    validate ONNX and compare raw outputs with PyTorch on deterministic input.
    Originals are never modified. Manifest includes class metadata and SHA-256s.
 2. `python tools/generate_fixtures.py`: generate expectations with frozen Python
